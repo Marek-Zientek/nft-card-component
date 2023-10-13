@@ -1,7 +1,17 @@
-*:before, *:after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --dark-bg : hsl(217, 54%, 11%);
+    --card-bg : hsl(216, 50%, 16%);
+    --underline-color : hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+    
+    --softBlue : hsl(215, 51%, 70%);
+    --cyan : hsl(178, 100%, 50%);
 }
 
 html {
@@ -9,6 +19,125 @@ html {
 }
 
 body {
-    font-size: 1.8rem;
+    // width: 100vw;
+    // height: 100vh;
+    font-size: 1.5rem;
     font-family: 'Outfit', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+ul li {
+    list-style: none;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    max-width: 350px;
+    // width: 90%;
+    // height: 80vh;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    overflow: hidden;
+    padding: 2rem;
+    
+    &-title {
+        padding: 1.5rem 0;
+        font-size: 2.5rem;
+    }
+    
+    &-desc {
+        color: var(--softBlue);
+        padding-bottom: 2rem;
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+}
+
+.eth-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 2rem 2rem;
+    & > .eth-price {
+        position: relative;
+        color: var(--cyan);
+        &::before {
+            content: "";
+            position: absolute;
+            left: -2rem;
+            top: 50%;
+            width: 15px;
+            height: 20px;
+            background-image: url("../img/icon-ethereum.svg");
+            background-repeat: no-repeat;
+            // border: 1px solid white;
+            transform: translateY(-50%);
+            
+        }
+    }
+    
+    & > .eth-date {
+        position: relative;
+        font-weight: 300;
+        color: var(--softBlue);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: -2rem;
+            width: 15px;
+            height: 15px;
+            background-image: url("../img/icon-clock.svg");
+            background-repeat: no-repeat;
+            // transform: translateY(-50%);
+        }
+    }
+} 
+
+
+.eth-people {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.people-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+}
+
+.people-name {
+    color: var(--softBlue);
+    margin-left: 2rem;
+    font-size: 1.6rem;
+}
+
+
+
+
